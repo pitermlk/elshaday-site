@@ -118,6 +118,93 @@
         display: none;
         padding: 20px 0;
       }
+      /* Adicione estes estilos ao seu bloco de estilos existente */
+      #mobile-menu {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      #mobile-menu a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      #mobile-menu a:last-child {
+        border-bottom: none;
+      }
+      
+      /* Ajuste para a animação de sublinhado nos links do menu mobile */
+      #mobile-menu .nav-item:after {
+        bottom: 0;
+      }
+      
+      @media (max-width: 767px) {
+        .overflow-x-auto {
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+      
+      /* Estilos para melhorar a tabela em dispositivos móveis */
+      @media (max-width: 768px) {
+        .table-container {
+          margin: 0 -1rem;
+          padding: 0 1rem;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: thin;
+        }
+        
+        #frequencyTable {
+          font-size: 0.75rem; /* Texto menor em dispositivos móveis */
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        #frequencyTable th,
+        #frequencyTable td {
+          white-space: nowrap;
+          padding: 0.5rem 0.5rem;
+        }
+        
+        #frequencyTable th:first-child,
+        #frequencyTable td:first-child {
+          position: sticky;
+          left: 0;
+          background-color: white;
+          z-index: 10;
+          box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        
+        #frequencyTable thead th:first-child {
+          background-color: var(--samsung-dark);
+          z-index: 11;
+        }
+        
+        /* Indicador de rolagem */
+        .scroll-indicator {
+          display: none;
+        }
+        
+        @media (max-width: 768px) {
+          .scroll-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            color: #666;
+            font-size: 0.75rem;
+          }
+          
+          .scroll-indicator svg {
+            animation: scrollRight 1.5s infinite;
+            margin-left: 0.25rem;
+          }
+        }
+        
+        @keyframes scrollRight {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(5px); }
+        }
+      }
     </style>
     <!-- Adicione esta biblioteca de animação no head antes do fechamento da tag </head> -->
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
@@ -156,13 +243,26 @@
             Sair
           </button>
         </div>
-        <button class="md:hidden text-white">
+        <button class="md:hidden text-white" id="mobile-menu-button">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </header>
+
+    <!-- Menu mobile (novo) -->
+    <div id="mobile-menu" class="md:hidden bg-samsung-dark text-white py-2 px-4 hidden">
+      <nav class="flex flex-col space-y-3">
+        <a href="#" class="nav-item font-semibold py-2">Início</a>
+        <a href="#" class="nav-item font-semibold py-2">Sobre</a>
+        <a href="#" class="nav-item font-semibold py-2">Agenda</a>
+        <a href="#attendance-section" class="nav-item font-semibold py-2 scrollToSection">Frequência</a>
+        <a href="#" class="nav-item font-semibold py-2">Integrantes</a>
+        <a href="#" class="nav-item font-semibold py-2">Galeria</a>
+        <a href="#" class="nav-item font-semibold py-2">Contato</a>
+      </nav>
+    </div>
 
     <!-- Hero Banner -->
     <section class="samsung-gradient text-white py-16">
@@ -256,17 +356,26 @@
           </div>
         </div>
         
-        <div class="overflow-x-auto">
+        <!-- Adicionar indicador de rolagem visível apenas em dispositivos móveis -->
+        <div class="scroll-indicator">
+          <span>Deslize para ver mais</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        
+        <!-- Envolver a tabela em um container específico para rolagem -->
+        <div class="table-container">
           <table id="frequencyTable" class="min-w-full text-sm">
             <thead>
               <tr class="bg-samsung-dark text-white">
                 <th class="py-3 px-4 text-left rounded-tl-lg">Nome</th>
-                <th class="py-3 px-4 text-center">Ensaio 1 - 03/05/2025</th>
-                <th class="py-3 px-4 text-center">Ensaio 2 - 08/05/2025</th>
-                <th class="py-3 px-4 text-center">Ensaio 3 - 10/05/2025</th>
-                <th class="py-3 px-4 text-center">Ensaio 4 - 11/05/2025</th>
-                <th class="py-3 px-4 text-center">Ensaio 5 - 15/05/2025</th>
-                <th class="py-3 px-4 text-center">Ensaio 6 - 17/05/2025</th>
+                <th class="py-3 px-4 text-center">Ensaio 1<br><span class="text-xs">03/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 2<br><span class="text-xs">08/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 3<br><span class="text-xs">10/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 4<br><span class="text-xs">11/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 5<br><span class="text-xs">15/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 6<br><span class="text-xs">17/05/2025</span></th>
               </tr>
             </thead>
             <tbody>
@@ -417,6 +526,42 @@
     
     // Ouvir por mudanças no hash da URL
     window.addEventListener('hashchange', handleHashChange);
+  });
+</script>
+<!-- Script para controlar o menu mobile -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu mobile toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        // Alterna a visibilidade do menu mobile
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+      
+      // Fechar menu quando um item é clicado
+      const mobileMenuItems = mobileMenu.querySelectorAll('a');
+      mobileMenuItems.forEach(item => {
+        item.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+    
+    // Garantir que o menu mobile esteja escondido quando a tela for redimensionada para desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768) { // 768px é o breakpoint 'md' no Tailwind
+        if (mobileMenu) {
+          mobileMenu.classList.add('hidden');
+        }
+      }
+    });
   });
 </script>
 <!-- Adicionar JavaScript para controle de paginação -->
