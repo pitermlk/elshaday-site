@@ -1,0 +1,206 @@
+site\index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupo El Shaday - Adolescentes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Samsung+Sharp+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --samsung-blue: #1428a0;
+        --samsung-light-blue: #2a4bce;
+        --samsung-dark: #000034;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-samsung {
+        font-family: 'Samsung Sharp Sans', 'Inter', sans-serif;
+      }
+      .bg-samsung-blue {
+        background-color: var(--samsung-blue);
+      }
+      .bg-samsung-light-blue {
+        background-color: var(--samsung-light-blue);
+      }
+      .bg-samsung-dark {
+        background-color: var(--samsung-dark);
+      }
+      .text-samsung-blue {
+        color: var(--samsung-blue);
+      }
+      .hover-samsung:hover {
+        color: var(--samsung-light-blue);
+        transition: all 0.3s ease;
+      }
+      .samsung-gradient {
+        background: linear-gradient(120deg, var(--samsung-dark), var(--samsung-blue));
+      }
+      .nav-item {
+        position: relative;
+      }
+      .nav-item:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+      .nav-item:hover:after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Top navigation bar -->
+    <header class="bg-samsung-dark text-white py-2 px-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="img/elshaday.png" alt="Logo El Shaday" class="h-12" />
+          <h1 class="text-xl font-samsung font-bold ml-4 tracking-tight"></h1>
+        </div>
+        <nav class="hidden md:flex space-x-10">
+          <a href="#" class="nav-item font-semibold">Início</a>
+          <a href="#" class="nav-item font-semibold">Sobre</a>
+          <a href="#" class="nav-item font-semibold">Agenda</a>
+          <a href="#" class="nav-item font-semibold">Frequência</a>
+          <a href="#" class="nav-item font-semibold">Contato</a>
+        </nav>
+        <button class="md:hidden text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="samsung-gradient text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h2 class="text-4xl md:text-5xl font-samsung font-bold mb-4 leading-tight">Grupo de Adolescentes <br>El Shaday</h2>
+          <p class="text-lg mb-6">Unidos em adoração e propósito, crescendo juntos na fé.</p>
+          <button class="bg-white text-samsung-blue font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300">
+            Saiba Mais
+          </button>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img src="img/elshaday.png" alt="Banner El Shaday" class="h-auto max-w-md rounded-lg shadow-2xl">
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="bg-white py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex flex-col items-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition duration-300">
+            <div class="rounded-full bg-samsung-blue p-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-samsung font-bold mb-2">Agenda</h3>
+            <p class="text-center text-gray-600">Confira nossa programação de ensaios e eventos</p>
+          </div>
+          
+          <div class="flex flex-col items-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition duration-300">
+            <div class="rounded-full bg-samsung-blue p-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-samsung font-bold mb-2">Frequência</h3>
+            <p class="text-center text-gray-600">Acompanhe a participação nos ensaios</p>
+          </div>
+          
+          <div class="flex flex-col items-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition duration-300">
+            <div class="rounded-full bg-samsung-blue p-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-samsung font-bold mb-2">Contato</h3>
+            <p class="text-center text-gray-600">Entre em contato com nossos coordenadores</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attendance Section -->
+    <main class="max-w-7xl mx-auto px-4 py-10">
+      <div class="flex items-center mb-6">
+        <div class="w-1 bg-samsung-blue h-8 mr-3"></div>
+        <h2 class="text-3xl font-samsung font-bold text-samsung-blue">Frequência de Ensaios - 2k25</h2>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="bg-samsung-dark text-white">
+                <th class="py-3 px-4 text-left rounded-tl-lg">Nome</th>
+                <th class="py-3 px-4 text-center">Ensaio 1</th>
+                <th class="py-3 px-4 text-center">Ensaio 2</th>
+                <th class="py-3 px-4 text-center">Ensaio 3</th>
+                <th class="py-3 px-4 text-center">Ensaio 4</th>
+                <th class="py-3 px-4 text-center">Ensaio 5</th>
+                <th class="py-3 px-4 text-center rounded-tr-lg">Ensaio 6</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Vinícius (Pereira)</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Pedro</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Levi</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Nicole</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Sofia</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">David G.</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Rayssa</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Washington</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Larissa</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Larissa</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Larissa</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Larissa</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-samsung-dark text-white py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-samsung font-bold mb-4">El Shaday</h3>
+            <p class="text-gray-300">Grupo de adolescentes comprometidos com a adoração e o crescimento espiritual.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-samsung font-bold mb-4">Links Rápidos</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-300 hover:text-white">Início</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white">Sobre</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white">Agenda</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white">Frequência</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-samsung font-bold mb-4">Contato</h3>
+            <p class="text-gray-300 mb-2">Entre em contato conosco:</p>
+            <p class="text-gray-300">contato@elshaday.com</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-6 text-center text-gray-400">
+          &copy; 2025 Grupo El Shaday - Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
