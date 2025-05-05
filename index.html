@@ -371,11 +371,12 @@
               <tr class="bg-samsung-dark text-white">
                 <th class="py-3 px-4 text-left rounded-tl-lg">Nome</th>
                 <th class="py-3 px-4 text-center">Ensaio 1<br><span class="text-xs">03/05/2025</span></th>
-                <th class="py-3 px-4 text-center">Ensaio 2<br><span class="text-xs">08/05/2025</span></th>
-                <th class="py-3 px-4 text-center">Ensaio 3<br><span class="text-xs">10/05/2025</span></th>
-                <th class="py-3 px-4 text-center">Ensaio 4<br><span class="text-xs">11/05/2025</span></th>
-                <th class="py-3 px-4 text-center">Ensaio 5<br><span class="text-xs">15/05/2025</span></th>
-                <th class="py-3 px-4 text-center">Ensaio 6<br><span class="text-xs">17/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 2<br><span class="text-xs">04/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 3<br><span class="text-xs">08/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 4<br><span class="text-xs">10/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 5<br><span class="text-xs">11/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 6<br><span class="text-xs">15/05/2025</span></th>
+                <th class="py-3 px-4 text-center">Ensaio 7<br><span class="text-xs">17/05/2025</span></th>
               </tr>
             </thead>
             <tbody>
@@ -408,6 +409,7 @@
               <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Matheus</td><td class="text-center"><span class="font-medium text-green-600">CONFIRMADO</span></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
               <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">William</td><td class="text-center"><span class="font-medium text-green-600">CONFIRMADO</span></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
               <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Davi</td><td class="text-center"><span class="font-medium text-green-600">CONFIRMADO</span></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-50"><td class="px-4 py-3 font-medium">Eduardo</td><td class="text-center"><span class="font-medium text-green-600">CONFIRMADO</span></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td></tr>
             </tbody>
           </table>
         </div>
@@ -692,6 +694,40 @@
         updateTable();
       });
     </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lista de nomes confirmados para o Ensaio 2 - corrigida com os nomes que faltavam
+    const confirmadosEnsaio2 = [
+      'Nicolas', 'Washington', 'Isack M', 'Guilherme', 'Bryan',
+      'Nikolas', 'Heitor', 'William', 'Felipe', 'Davi',
+      'Levi', 'Yanne', 'Leticia', 'Nicole', 'Nycole',
+      'Julia', 'Sofia', 'Eduardo', 'Rayssa', 'Ana Luiza'
+    ];
+    
+    // Percorrer todas as linhas da tabela
+    const rows = document.querySelectorAll('#frequencyTable tbody tr');
+    
+    rows.forEach(row => {
+      // Obter o nome da primeira célula
+      const nameCell = row.querySelector('td:first-child');
+      const name = nameCell.textContent.trim();
+      
+      // Verificar se o nome está na lista de confirmados para o Ensaio 2
+      if (confirmadosEnsaio2.some(confirmedName => 
+          name.toLowerCase().includes(confirmedName.toLowerCase()))) {
+        
+        // Acessar a célula do Ensaio 2 (índice 2, pois o índice 1 é o Ensaio 1)
+        const ensaio2Cell = row.querySelectorAll('td')[2];
+        
+        // Adicionar o status "CONFIRMADO"
+        if (ensaio2Cell) {
+          ensaio2Cell.innerHTML = '<span class="font-medium text-green-600">CONFIRMADO</span>';
+          ensaio2Cell.classList.add('text-center');
+        }
+      }
+    });
+  });
+</script>
     <div id="loginModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
