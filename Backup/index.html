@@ -769,6 +769,71 @@
     });
   });
 </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lista de nomes confirmados para o Ensaio 4
+    const confirmadosEnsaio4 = [
+      'Rayssa', 'Giovanna', 'Leticia', 'Yanne', 'Guilherme',
+      'Leonardo', 'Heitor', 'William', 'Davi', 'Isack',
+      'Levi', 'Nicolas', 'Washington', 'Felipe'
+    ];
+    
+    // Percorrer todas as linhas da tabela
+    const rows = document.querySelectorAll('#frequencyTable tbody tr');
+    
+    rows.forEach(row => {
+      // Obter o nome da primeira célula
+      const nameCell = row.querySelector('td:first-child');
+      const name = nameCell.textContent.trim();
+      
+      // Verificar se o nome está na lista de confirmados para o Ensaio 4
+      if (confirmadosEnsaio4.some(confirmedName => 
+          name.toLowerCase().includes(confirmedName.toLowerCase()))) {
+        
+        // Acessar a célula do Ensaio 4 (índice 4, pois índice 0 é o nome, índice 1-3 são os Ensaios 1-3)
+        const ensaio4Cell = row.querySelectorAll('td')[4];
+        
+        // Adicionar o status "CONFIRMADO"
+        if (ensaio4Cell) {
+          ensaio4Cell.innerHTML = '<span class="font-medium text-green-600">CONFIRMADO</span>';
+          ensaio4Cell.classList.add('text-center');
+        }
+      }
+    });
+  });
+</script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lista de nomes confirmados para o Ensaio 5
+    const confirmadosEnsaio5 = [
+      'Yanne', 'Leticia', 'Levi', 'Washington',
+      'Nicolas', 'Guilherme', 'Leonardo', 'William'
+    ];
+    
+    // Percorrer todas as linhas da tabela
+    const rows = document.querySelectorAll('#frequencyTable tbody tr');
+    
+    rows.forEach(row => {
+      // Obter o nome da primeira célula
+      const nameCell = row.querySelector('td:first-child');
+      const name = nameCell.textContent.trim();
+      
+      // Verificar se o nome está na lista de confirmados para o Ensaio 5
+      if (confirmadosEnsaio5.some(confirmedName => 
+          name.toLowerCase().includes(confirmedName.toLowerCase()))) {
+        
+        // Acessar a célula do Ensaio 5 (índice 5, pois índice 0 é o nome, índices 1-4 são os Ensaios 1-4)
+        const ensaio5Cell = row.querySelectorAll('td')[5];
+        
+        // Adicionar o status "CONFIRMADO"
+        if (ensaio5Cell) {
+          ensaio5Cell.innerHTML = '<span class="font-medium text-green-600">CONFIRMADO</span>';
+          ensaio5Cell.classList.add('text-center');
+        }
+      }
+    });
+  });
+</script>
     <div id="loginModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
